@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Editar el Usuario #{{usuario.0}}</h1>
+<form action="/guarda_usuario/{{usuario.0}}" method="POST">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="Nombres" value="{{usuario.1}}" placeholder="Coloque su nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" name="Apellidos" value="{{usuario.2}}" placeholder="Coloque su apellido">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Correo</label>
+        <input type="text" class="form-control" name="Correo" value="{{usuario.3}}" placeholder="nombre@ejemplo.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Edad</label>
+        <input type="number" class="form-control" name="Edad" value="{{usuario.4}}" placeholder="Indique su edad">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Dirección</label>
+        <input type="text" class="form-control" name="Direccion" value="{{usuario.5}}" placeholder="Coloque su dirección">
+    </div>
+    <button type="reset" class="btn btn-danger">Cancelar</button>
+    <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+{% endblock %}

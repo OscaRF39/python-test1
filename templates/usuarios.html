@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% if usuarios|length > 0 %}
+<div class="row align-items-center">
+    <div class="col-md-auto">
+        <h1>Lista de Usuarios</h1>
+    </div>
+    <div class="col">
+        <a class="btn btn-primary" href="{{url_for('fnAgregarUsuario')}}" role="button">Agregar Usuario</a>
+    </div>
+</div>
+<table class="table table-striped text-center">
+    <thead>
+        <tr class="table-dark">
+            <th scope="col">#</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <th scope="row">{{ usuario.0 }}</th>
+            <td>{{ usuario.1 }}</td>
+            <td>{{ usuario.2 }}</td>
+            <td>{{ usuario.3 }}</td>
+            <td>{{ usuario.4 }}</td>
+            <td>{{ usuario.5 }}</td>
+            <td>
+                <a class="btn btn-warning" href="EditarUsuario/{{usuario.0}}" role="button">Editar</a>
+                <a class="btn btn-danger btnCancelar" href="CancelarUsuario/{{usuario.0}}" id="{{usuario.0}}" role="button">Cancelar</a>
+                <!--<a class="btn btn-danger btnCancelar" href="#" id="{{usuario.0}}" role="button">Cancelar</a>-->
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+
+<div class="row align-items-center">
+    <div class="col-md-auto">
+        <h1>No se encontraron resultados</h1>
+    </div>
+    <div class="col">
+        <a class="btn btn-primary" href="{{url_for('fnAgregarUsuario')}}" role="button">Agregar Usuario</a>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

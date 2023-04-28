@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Agregar Usuario</h1>
+<form action="/guarda_usuario/0" method="POST">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+        <input type="text" class="form-control" name="Nombres" placeholder="Coloque su nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" name="Apellidos" placeholder="Coloque su apellido">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Correo</label>
+        <input type="text" class="form-control" name="Correo" placeholder="nombre@ejemplo.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Edad</label>
+        <input type="number" class="form-control" name="Edad" placeholder="Indique su edad">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Dirección</label>
+        <input type="text" class="form-control" name="Direccion" placeholder="Coloque su dirección">
+    </div>
+    <button type="reset" class="btn btn-danger">Cancelar</button>
+    <button type="submit" class="btn btn-success">Enviar</button>
+</form>
+{% endblock %}
