@@ -5,10 +5,20 @@ from flask_mysqldb import MySQL
 #Por default el nombre de la carpeta es templates
 #existen varios parametros para rutas como el static_folder etc... revisar documentación
 app = Flask(__name__)
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'tienda'
+
+########DESARROLLO#######
+app.config['MYSQL_HOST'] = 'db4free.net '
+app.config['MYSQL_USER'] = 'usuario_oscar'
+app.config['MYSQL_PASSWORD'] = '123456789'
+app.config['MYSQL_DB'] = 'tienda_oscar'
+########DESARROLLO#######
+
+#######PRODUCCION#######
+#app.config['MYSQL_HOST'] = 'localhost'
+#app.config['MYSQL_USER'] = 'root'
+#app.config['MYSQL_PASSWORD'] = ''
+#app.config['MYSQL_DB'] = 'tienda'
+#######PRODUCCION#######
 mysql = MySQL(app)
 
 @app.route("/")
