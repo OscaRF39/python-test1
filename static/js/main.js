@@ -1,26 +1,19 @@
 const BotonesCancelar = document.querySelectorAll('.btnCancelar');
-if(BotonesCancelar){
+if (BotonesCancelar) {
     const btnArray = Array.from(BotonesCancelar);
-    //alert(btnArray.length);
     btnArray.forEach((btn) => {
-        //alert(btn.id);
-        btn.addEventListener('click', (e) => {            
-            var TextoModal = "";
-            if(!jsModal(btn.id)){
-                e.preventDefault();
-            }else{
-                alert("true");
-            }
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            jsModal(btn.id);
         });
     });
 }
 
-function jsModal(id){
-    $(".modal-title").html("¿Cancelar el usuario # <b>"+id+"?</b>");
+async function jsModal(id) {
+    $(".modal-title").html("Usuarios");
     $(".modal-header").addClass("bg-warning");
+    $(".modal-body").html("¿Desea cancelar el usuario # <b>" + id + "?</b>");
     var myModal = new bootstrap.Modal(document.getElementById("VentanaModal"), {});
-    myModal.show(function(e){
-        alert(e);
-        return true;
-    });
+    myModal.show();
+    $("#VentanaModal").find('.btn-Cancelar').attr('href', 'CancelarUsuario/'+id);
 }
