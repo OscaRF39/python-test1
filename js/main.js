@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-const BotonesCancelar = document.querySelectorAll('.btnCancelar');
-if (BotonesCancelar) {
-    const btnArray = Array.from(BotonesCancelar);
-    btnArray.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            jsModal(btn.id);
-        });
-    });
-}
-
-async function jsModal(id) {
-    $(".modal-title").html("Usuarios");
-    $(".modal-header").addClass("bg-warning");
-    $(".modal-body").html("¿Desea cancelar el usuario # <b>" + id + "?</b>");
-    var myModal = new bootstrap.Modal(document.getElementById("VentanaModal"), {});
-    myModal.show();
-    $("#VentanaModal").find('.btn-Cancelar').attr('href', 'CancelarUsuario/'+id);
-=======
 const BotonesCancelar = document.querySelectorAll('.btnCancelar');
 if (BotonesCancelar) {
     const btnArray = Array.from(BotonesCancelar);
@@ -62,13 +42,8 @@ const toBase64 = file => new Promise((resolve, reject) => {
 });
 
 async function jsColocarImagen() {
-
     const file = document.querySelector('#Imagen').files[0];
-
-    let CajaImagen = document.querySelector("#ImagenUsuario");
-
+    let CajaImagen = document.getElementById("ImagenUsuario");
     let Imagen64 = await toBase64(file);
     CajaImagen.src = Imagen64;
-    CajaImagen.style.display = "block"
->>>>>>> 6b4b1ce (v2.0)
 }

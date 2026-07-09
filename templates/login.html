@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form action="/valida-usuario" method="post">
+    <div class="mb-3">
+      <label for="user" class="form-label">Usuario</label>
+      <input type="text" name="user" placeholder="Ingresa tu usuario" class="form-control" id="user">
+    </div>
+    <div class="mb-3">
+      <label for="clave" class="form-label">Clave</label>
+      <input type="password" name="clave" placeholder="Ingresa tu clave" class="form-control" id="clave">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+{% endblock %}
