@@ -58,7 +58,7 @@ def fnValidaUsuario():
         session['loggedin'] = True
         session['user'] = account[0]
         session['cClave'] = account[1]
-        return "si"
+        return redirect(url_for('fnListaUsuarios'))
     else:
         return "usuario incorrecto"
 
