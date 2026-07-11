@@ -50,7 +50,7 @@ def fnValidaUsuario():
     
     cur = mysql.connection.cursor()
     # Consulta parametrizada
-    cur.execute('SELECT cUser,cClave FROM usuario WHERE cUsuario = %s AND cClave = %s', (Usuariomd5, Clavemd5))
+    cur.execute('SELECT cUsuario,cClave FROM usuario WHERE cUsuario = %s AND cClave = %s', (Usuariomd5, Clavemd5))
     account = cur.fetchone()
     cur.close() # <-- CORREGIDO: antes decía cursor.close()
     
