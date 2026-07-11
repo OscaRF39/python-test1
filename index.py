@@ -9,10 +9,10 @@ app = Flask(__name__)
 app.secret_key = 't1burones'
 
 # Configuración de Base de Datos Hostinger
-app.config['MYSQL_HOST'] = 'srv521.hstgr.io'
-app.config['MYSQL_USER'] = 'u695554080_maya_consola'
-app.config['MYSQL_PASSWORD'] = 'wCQ@Z!c8@'
-app.config['MYSQL_DB'] = 'u695554080_maya_consola'
+app.config['MYSQL_HOST'] = 'sql8.freesqldatabase.com'
+app.config['MYSQL_USER'] = 'sql8832799'
+app.config['MYSQL_PASSWORD'] = 'YAsbpWEBfi'
+app.config['MYSQL_DB'] = 'sql8832799'
 mysql = MySQL(app)
 
 app.config['FOTOS'] = 'images'
