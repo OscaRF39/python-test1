@@ -8,7 +8,7 @@ from functools import wraps
 app = Flask(__name__)
 app.secret_key = 't1burones'
 
-# Configuración de Base de Datos Hostinger
+# Configuración de Base de Datos
 app.config['MYSQL_HOST'] = 'sql8.freesqldatabase.com'
 app.config['MYSQL_USER'] = 'sql8832799'
 app.config['MYSQL_PASSWORD'] = 'YAsbpWEBfi'
